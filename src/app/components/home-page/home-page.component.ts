@@ -6,6 +6,16 @@ import { CommonModule } from '@angular/common';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { HoverDetailDirective } from '../../directives/hover-detail.directive';
 
+interface Item {
+  img: string;
+  price: string;
+  description: string;
+  brand: string;
+  negotiable: string;
+  exchange: string;
+  location: string;
+}
+
 @Component({
   selector: 'app-home-page',
   providers: [CarouselComponent],
@@ -22,12 +32,19 @@ import { HoverDetailDirective } from '../../directives/hover-detail.directive';
   ],
 })
 export class HomePageComponent implements OnInit {
-  numberPopularPage: number = 1;
-  pagePopularQuantity: number = 100;
-  numberLastPage: number = 1;
-  pageLastQuantity: number = 100;
+  pageSize = 8;
+  pageIndex = 0;
 
-  popularItems = [
+  hidePageSize = false;
+  showPageSizeOptions = true;
+  showFirstLastButtons = true;
+  disabled = false;
+  pagedPopularItems: Item[] = [];
+  pagedLatestItems: Item[] = [];
+
+  pageEvent: PageEvent;
+
+  popularItems: Item[] = [
     {
       img: 'assets/img/popular-items/img.png',
       price: '1 000 $',
@@ -100,9 +117,6 @@ export class HomePageComponent implements OnInit {
       exchange: 'Yes',
       location: 'Kyiv city',
     },
-  ];
-
-  mockPopularItemsOdd = [
     {
       img: 'assets/img/popular-items/img.png',
       price: '5 000 $',
@@ -175,9 +189,6 @@ export class HomePageComponent implements OnInit {
       exchange: 'Yes',
       location: 'Kyiv city',
     },
-  ];
-
-  mockPopularItemsEven = [
     {
       img: 'assets/img/popular-items/img_1.png',
       price: '900 $',
@@ -252,7 +263,7 @@ export class HomePageComponent implements OnInit {
     },
   ];
 
-  popularLatestItems = [
+  popularLatestItems: Item[] = [
     {
       img: 'assets/img/popular-items/img.png',
       price: '1 000 $',
@@ -289,9 +300,6 @@ export class HomePageComponent implements OnInit {
       exchange: 'Yes',
       location: 'Kyiv city',
     },
-  ];
-
-  popularLatestItemsOdd = [
     {
       img: 'assets/img/popular-items/img.png',
       price: '5 000 $',
@@ -328,9 +336,6 @@ export class HomePageComponent implements OnInit {
       exchange: 'Yes',
       location: 'Kyiv city',
     },
-  ];
-
-  popularLatestItemsEven = [
     {
       img: 'assets/img/popular-items/img_1.png',
       price: '1 950 $',
@@ -398,31 +403,32 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.carousel.autoSlide = true;
+    this.setPagedItems();
+    this.setPagedItemsLatest();
+  }
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
+    this.setPagedItems();
   }
 
-  public loadPopularItems() {
-    this.numberPopularPage++;
-    this.loadNextPage(this.numberPopularPage);
+  handlePageEventLatest(e: PageEvent) {
+    this.pageEvent = e;
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
+    this.setPagedItemsLatest();
   }
 
-  public loadLatestItems() {
-    this.numberLastPage++;
-    this.loadLatestPage(this.numberLastPage);
+  setPagedItems() {
+    const startIndex = this.pageIndex * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.pagedPopularItems = this.popularItems.slice(startIndex, endIndex);
   }
 
-  loadNextPage(pageNumber: number) {
-    if (pageNumber % 2 === 0) {
-      this.popularItems = this.mockPopularItemsEven;
-    } else {
-      this.popularItems = this.mockPopularItemsOdd;
-    }
-  }
-
-  loadLatestPage(pageNumber: number) {
-    if (pageNumber % 2 === 0) {
-      this.popularLatestItems = this.popularLatestItemsEven;
-    } else {
-      this.popularLatestItems = this.popularLatestItemsOdd;
-    }
+  setPagedItemsLatest() {
+    const startIndex = this.pageIndex * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.pagedLatestItems = this.popularLatestItems.slice(startIndex, endIndex);
   }
 }

@@ -167,26 +167,3 @@
   }
 }
 
-.pagination {
-  position: absolute;
-  right: 94px;
-  top: 15px;
-
-  &__number {
-    border: 1px solid #000;
-    border-radius: 8px;
-    padding: 10px 30px 10px 5px;
-    margin: 0 6px;
-  }
-
-  &__text,
-  &__quantity {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 15.4px;
-    text-align: left;
-  }
-  &__quantity {
-    margin-left: 6px;
-  }
-}
