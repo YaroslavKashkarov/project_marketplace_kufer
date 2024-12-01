@@ -1,6 +1,6 @@
 import {Component, Inject, Input, OnInit, PLATFORM_ID} from '@angular/core';
 import {CommonModule, isPlatformBrowser} from '@angular/common';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 interface carouselSlide {
   imageSrc: string;
   imageAlt: string;
@@ -12,7 +12,7 @@ interface carouselSlide {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
 })

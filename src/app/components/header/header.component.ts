@@ -12,6 +12,7 @@ import {Subscription} from 'rxjs';
 import {UserIconComponent} from './user-icon/user-icon.component';
 import {SearchFieldComponent} from './search-field/search-field.component';
 import {TranslateService} from '@ngx-translate/core';
+import {FavoriteComponent} from "../favorite/favorite.component";
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -24,6 +25,7 @@ import {TranslateService} from '@ngx-translate/core';
     MatDialogModule,
     UserIconComponent,
     SearchFieldComponent,
+    FavoriteComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

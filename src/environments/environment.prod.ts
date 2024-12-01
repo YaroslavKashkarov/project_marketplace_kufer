@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndPoint: 'https://rover-marketplace.yurgo.site',
+  apiEndPoint: 'https://bicycle-marketplace-rover-api-1.onrender.com',
 };

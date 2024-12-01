@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiEndPoint: 'https://rover-marketplace.yurgo.site',
-  googleClientId: '474772526771-bkj1691fuq6b31qlgd5apilr7or4d9lv.apps.googleusercontent.com',
+  apiEndPoint: 'https://bicycle-marketplace-rover-api-1.onrender.com',
+  googleClientId: '483092307983-ijcr1hni98a8paje32lvhptdrpirknov.apps.googleusercontent.com',
 };

@@ -1,4 +1,5 @@
-<app-carousel [slides]="slides" [autoSlide]="true" [slideInterval]="3000"></app-carousel>
+<app-carousel [slides]="slides" [autoSlide]="true"
+              [slideInterval]="3000"></app-carousel>
 
 <div class="main">
   <div class="main-content__container">
@@ -8,496 +9,483 @@
       </div>
 
       <div class="category__products">
-        <div *ngFor="let product of popularItems" class="product" appHoverDetail>
-          <svg
-            class="product__ticket"
-            fill="none"
-            height="29"
-            viewBox="0 0 72 29"
-            width="72"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+        <div *ngFor="let product of popularItems" class="product"
+             appHoverDetail>
+          <svg class="product__ticket" fill="none" height="29"
+               viewBox="0 0 72 29" width="72"
+               xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-              fill="#00478F"
-            />
-            <text
-              fill="white"
-              font-family="Lato"
-              font-size="16"
-              font-style="normal"
-              font-weight="400"
-              letter-spacing="0.64px"
-              line-height="normal"
-              x="10"
-              y="20"
-            >
+		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+		            fill="#00478F"/>
+            <text fill="white" font-family="Lato" font-size="16"
+                  font-style="normal" font-weight="400"
+                  letter-spacing="0.64px" line-height="normal" x="10" y="20">
               New
             </text>
           </svg>
           <div class="img">
-            <img [src]="product.img" alt="img" class="product__img" />
+            <img [src]="product.img" alt="img" class="product__img"/>
           </div>
           <div class="product-card">
-            <h3 class="price">{{ product.price }}</h3>
+            <h3 class="price">{{product.price}}</h3>
           </div>
           <div class="description">
-            <h4 class="product__description">{{ product.description }}</h4>
+            <h4 class="product__description">{{product.description}}</h4>
           </div>
           <div class="product__details" style="display: none">
             <div class="product__text">
               <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">{{ product.brand }}</span>
+              <span class="product__text-text">{{product.brand}}</span>
             </div>
             <div class="product__text">
               <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">{{ product.negotiable }}</span>
+              <span class="product__text-text">{{product.negotiable}}</span>
             </div>
             <div class="product__text">
               <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">{{ product.exchange }}</span>
+              <span class="product__text-text">{{product.exchange}}</span>
             </div>
             <div class="product__text">
               <span class="product__text-title">Location</span>
-              <span class="product__text-text">{{ product.location }}</span>
+              <span class="product__text-text">{{product.location}}</span>
             </div>
           </div>
         </div>
       </div>
-      <!--div class="category__products">
-        < <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">New
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">1 000 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description">A popular model of a modern bicycle
-              24d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">
-              Used
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_1.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">1 300 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description">Mountain bicycle for sale. Well -
-              maintained mountain bike, great for
-              off-road adventures. Excellent
-              condition, ready for a new rider
-              26d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">
-              Used
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_2.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">950 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description">City commuter bicycle. Stylish city
-              bike for daily commuting. Smooth
-              ride,
-              in excellent condition.
-              28d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">New
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_3.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">900 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description">Speedy road bicycle.
-              High-performance road bike for
-              speed enthusiasts.
-              Lightweight and aerodynamic design.
-              28d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">
-              Used
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_4.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">1 050 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description"> Versatile hybrid bicycle.
-              Comfortable hybrid bike for city
-              and off-road
-              trails. Well-cared-for and
-              versatile.
-              24d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">New
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_5.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">1 500 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description"> Junior rider's bicycle.
-              Junior-sized bike, gently used and
-              sturdy. Ideal
-              for young cyclists.
-              26d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">
-              Used
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_6.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">1 100 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description"> VAll-terrain adventure bicycle.
-              Explore the great outdoors with
-              this
-              rugged mountain bike. Robust
-              build, excellent condition, and
-              ready for
-              trailblazing adventures.
-              22d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>
-        <div class="product"  appHoverDetail>
-          <svg class="product__ticket" fill="none" height="29"
-               viewBox="0 0 72 29" width="72"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		            fill="#00478F"/>
-            <text fill="white" font-family="Lato" font-size="16"
-                  font-style="normal" font-weight="400"
-                  letter-spacing="0.64px" line-height="normal" x="10" y="20">New
-            </text>
-          </svg>
-          <div class="img">
-            <img alt="img" class="product__img"
-                 src="assets/img/popular-items/img_7.png">
-          </div>
-          <div class="product-card">
-            <h3 class="price">850 $</h3>
-            <svg class="favorite__img" fill="none" height="24"
-                 viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-		              d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		              fill="#FFD640"/>
-            </svg>
-          </div>
-          <div class="description">
-            <h4 class="product__description"> VAll-terrain adventure bicycle.
-              Explore the great outdoors with
-              this
-              rugged mountain bike. Robust
-              build, excellent condition, and
-              ready for
-              trailblazing adventures.
-              22d</h4>
-          </div>
-          <div class="product__details" style="display: none">
-            <div class="product__text">
-              <span class="product__text-title">Bicycle brand</span>
-              <span class="product__text-text">Leon</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Negotiable price</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Exchange available</span>
-              <span class="product__text-text">Yes</span>
-            </div>
-            <div class="product__text">
-              <span class="product__text-title">Location</span>
-              <span class="product__text-text">Kyiv city</span>
-            </div>
-          </div>
-        </div>>
-      </div-->
+	    <!--div class="category__products">
+				< <div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">1 000 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description">A popular model of a modern bicycle
+							24d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">
+							Used
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_1.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">1 300 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description">Mountain bicycle for sale. Well -
+							maintained mountain bike, great for
+							off-road adventures. Excellent
+							condition, ready for a new rider
+							26d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">
+							Used
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_2.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">950 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description">City commuter bicycle. Stylish city
+							bike for daily commuting. Smooth
+							ride,
+							in excellent condition.
+							28d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_3.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">900 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description">Speedy road bicycle.
+							High-performance road bike for
+							speed enthusiasts.
+							Lightweight and aerodynamic design.
+							28d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">
+							Used
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_4.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">1 050 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description"> Versatile hybrid bicycle.
+							Comfortable hybrid bike for city
+							and off-road
+							trails. Well-cared-for and
+							versatile.
+							24d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_5.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">1 500 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description"> Junior rider's bicycle.
+							Junior-sized bike, gently used and
+							sturdy. Ideal
+							for young cyclists.
+							26d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">
+							Used
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_6.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">1 100 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description"> VAll-terrain adventure bicycle.
+							Explore the great outdoors with
+							this
+							rugged mountain bike. Robust
+							build, excellent condition, and
+							ready for
+							trailblazing adventures.
+							22d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>
+				<div class="product"  appHoverDetail>
+					<svg class="product__ticket" fill="none" height="29"
+							 viewBox="0 0 72 29" width="72"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+								fill="#00478F"/>
+						<text fill="white" font-family="Lato" font-size="16"
+									font-style="normal" font-weight="400"
+									letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+						</text>
+					</svg>
+					<div class="img">
+						<img alt="img" class="product__img"
+								 src="assets/img/popular-items/img_7.png">
+					</div>
+					<div class="product-card">
+						<h3 class="price">850 $</h3>
+						<svg class="favorite__img" fill="none" height="24"
+								 viewBox="0 0 24 24" width="24"
+								 xmlns="http://www.w3.org/2000/svg">
+							<path
+									d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+									fill="#FFD640"/>
+						</svg>
+					</div>
+					<div class="description">
+						<h4 class="product__description"> VAll-terrain adventure bicycle.
+							Explore the great outdoors with
+							this
+							rugged mountain bike. Robust
+							build, excellent condition, and
+							ready for
+							trailblazing adventures.
+							22d</h4>
+					</div>
+					<div class="product__details" style="display: none">
+						<div class="product__text">
+							<span class="product__text-title">Bicycle brand</span>
+							<span class="product__text-text">Leon</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Negotiable price</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Exchange available</span>
+							<span class="product__text-text">Yes</span>
+						</div>
+						<div class="product__text">
+							<span class="product__text-title">Location</span>
+							<span class="product__text-text">Kyiv city</span>
+						</div>
+					</div>
+				</div>>
+			</div-->
     </div>
     <div class="btn">
       <button class="btn-more" (click)="loadPopularItems()">Next page</button>
       <div class="pagination">
         <span class="pagination__text">Page</span>
-        <span class="pagination__number">{{ numberPopularPage }}</span>
+        <span class="pagination__number">{{numberPopularPage}}</span>
         <span>of</span>
-        <span class="pagination__quantity">{{ pagePopularQuantity }}</span>
+        <span class="pagination__quantity">{{pagePopularQuantity}}</span>
       </div>
     </div>
 
@@ -505,284 +493,272 @@
       <h2 class="title__text">LATEST ITEMS</h2>
     </div>
     <div class="category__products">
-      <div *ngFor="let product of popularLatestItems" class="product" appHoverDetail>
-        <svg
-          class="product__ticket"
-          fill="none"
-          height="29"
-          viewBox="0 0 72 29"
-          width="72"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+      <div *ngFor="let product of popularLatestItems" class="product"
+           appHoverDetail>
+        <svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
+             width="72"
+             xmlns="http://www.w3.org/2000/svg">
           <path
-            d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-            fill="#00478F"
-          />
-          <text
-            fill="white"
-            font-family="Lato"
-            font-size="16"
-            font-style="normal"
-            font-weight="400"
-            letter-spacing="0.64px"
-            line-height="normal"
-            x="10"
-            y="20"
-          >
+		          d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+		          fill="#00478F"/>
+          <text fill="white" font-family="Lato" font-size="16"
+                font-style="normal" font-weight="400"
+                letter-spacing="0.64px" line-height="normal" x="10" y="20">
             New
           </text>
         </svg>
         <div class="img">
-          <img [src]="product.img" alt="img" class="product__img" />
+          <img [src]="product.img" alt="img" class="product__img"/>
         </div>
         <div class="product-card">
-          <h3 class="price">{{ product.price }}</h3>
+          <h3 class="price">{{product.price}}</h3>
         </div>
         <div class="description">
-          <h4 class="product__description">{{ product.description }}</h4>
+          <h4 class="product__description">{{product.description}}</h4>
         </div>
         <div class="product__details" style="display: none">
           <div class="product__text">
             <span class="product__text-title">Bicycle brand</span>
-            <span class="product__text-text">{{ product.brand }}</span>
+            <span class="product__text-text">{{product.brand}}</span>
           </div>
           <div class="product__text">
             <span class="product__text-title">Negotiable price</span>
-            <span class="product__text-text">{{ product.negotiable }}</span>
+            <span class="product__text-text">{{product.negotiable}}</span>
           </div>
           <div class="product__text">
             <span class="product__text-title">Exchange available</span>
-            <span class="product__text-text">{{ product.exchange }}</span>
+            <span class="product__text-text">{{product.exchange}}</span>
           </div>
           <div class="product__text">
             <span class="product__text-title">Location</span>
-            <span class="product__text-text">{{ product.location }}</span>
+            <span class="product__text-text">{{product.location}}</span>
           </div>
         </div>
       </div>
     </div>
-    <!--   <div class="category__products">
-      <div class="product" appHoverDetail>
-        <svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
-             width="72"
-             xmlns="http://www.w3.org/2000/svg">
-          <path
-		          d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		          fill="#00478F"/>
-          <text fill="white" font-family="Lato" font-size="16"
-                font-style="normal" font-weight="400"
-                letter-spacing="0.64px" line-height="normal" x="10" y="20">New
-          </text>
-        </svg>
-        <div class="img">
-          <img alt="img" class="product__img"
-               src="assets/img/popular-items/img_8.png">
-        </div>
-        <div class="product-card">
-          <h3 class="price">999 $</h3>
-          <svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
-               width="24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		            fill="#FFD640"/>
-          </svg>
-        </div>
-        <div class="description">
-          <h4 class="product__description">Commuter bargain bicycle. Commute
-            smarter with our bicycles on sale.
-            Affordable, eco-friendly, and perfect
-            for city living. Limited-time offer,
-            act fast!</h4>
-        </div>
-        <div class="product__details" style="display: none">
-          <div class="product__text">
-            <span class="product__text-title">Bicycle brand</span>
-            <span class="product__text-text">Leon</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Negotiable price</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Exchange available</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Location</span>
-            <span class="product__text-text">Kyiv city</span>
-          </div>
-        </div>
-      </div>
-      <div class="product"  appHoverDetail>
-        <svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
-             width="72"
-             xmlns="http://www.w3.org/2000/svg">
-          <path
-		          d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		          fill="#00478F"/>
-          <text fill="white" font-family="Lato" font-size="16"
-                font-style="normal" font-weight="400"
-                letter-spacing="0.64px" line-height="normal" x="10" y="20">Used
-          </text>
-        </svg>
-        <div class="img">
-          <img alt="img" class="product__img"
-               src="assets/img/popular-items/img_9.png">
-        </div>
-        <div class="product-card">
-          <h3 class="price">1 199 $</h3>
-          <svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
-               width="24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		            fill="#FFD640"/>
-          </svg>
-        </div>
-        <div class="description">
-          <h4 class="product__description">Mountain bicycle mega sale! Explore
-            off-road adventures with our
-            discounted
-            mountain bikes. Durable, reliable,
-            and perfect for all terrain.
-            26d</h4>
-        </div>
-        <div class="product__details" style="display: none">
-          <div class="product__text">
-            <span class="product__text-title">Bicycle brand</span>
-            <span class="product__text-text">Leon</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Negotiable price</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Exchange available</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Location</span>
-            <span class="product__text-text">Kyiv city</span>
-          </div>
-        </div>
-      </div>
-      <div class="product"  appHoverDetail>
-        <svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
-             width="72"
-             xmlns="http://www.w3.org/2000/svg">
-          <path
-		          d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		          fill="#00478F"/>
-          <text fill="white" font-family="Lato" font-size="16"
-                font-style="normal" font-weight="400"
-                letter-spacing="0.64px" line-height="normal" x="10" y="20">Used
-          </text>
-        </svg>
-        <div class="img">
-          <img alt="img" class="product__img"
-               src="assets/img/popular-items/img_10.png">
-        </div>
-        <div class="product-card">
-          <h3 class="price">1 020 $</h3>
-          <svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
-               width="24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		            fill="#FFD640"/>
-          </svg>
-        </div>
-        <div class="description">
-          <h4 class="product__description">City bicycle flash deal. Ride in
-            style through the city streets with
-            our
-            cruiser bikes, now at a special
-            price. Comfortable, trendy, and ready
-            for
-            urban exploration.
-            28d</h4>
-        </div>
-        <div class="product__details" style="display: none">
-          <div class="product__text">
-            <span class="product__text-title">Bicycle brand</span>
-            <span class="product__text-text">Leon</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Negotiable price</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Exchange available</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Location</span>
-            <span class="product__text-text">Kyiv city</span>
-          </div>
-        </div>
-      </div>
-      <div class="product"  appHoverDetail>
-        <svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
-             width="72"
-             xmlns="http://www.w3.org/2000/svg">
-          <path
-		          d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
-		          fill="#00478F"/>
-          <text fill="white" font-family="Lato" font-size="16"
-                font-style="normal" font-weight="400"
-                letter-spacing="0.64px" line-height="normal" x="10" y="20">New
-          </text>
-        </svg>
-        <div class="img">
-          <img alt="img" class="product__img"
-               src="assets/img/popular-items/img_11.png">
-        </div>
-        <div class="product-card">
-          <h3 class="price">900 $</h3>
-          <svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
-               width="24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-		            d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
-		            fill="#FFD640"/>
-          </svg>
-        </div>
-        <div class="description">
-          <h4 class="product__description">Mountain bikes on sale! Elevate your
-            trail experience with our discounted
-            mountain bikes. Grab yours now for
-            rugged adventures at an unbeatable
-            price.
-            28d</h4>
-        </div>
-        <div class="product__details" style="display: none">
-          <div class="product__text">
-            <span class="product__text-title">Bicycle brand</span>
-            <span class="product__text-text">Leon</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Negotiable price</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Exchange available</span>
-            <span class="product__text-text">Yes</span>
-          </div>
-          <div class="product__text">
-            <span class="product__text-title">Location</span>
-            <span class="product__text-text">Kyiv city</span>
-          </div>
-        </div>
-      </div>
-    </div> -->
+	  <!--   <div class="category__products">
+			<div class="product" appHoverDetail>
+				<svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
+						 width="72"
+						 xmlns="http://www.w3.org/2000/svg">
+					<path
+							d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+							fill="#00478F"/>
+					<text fill="white" font-family="Lato" font-size="16"
+								font-style="normal" font-weight="400"
+								letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+					</text>
+				</svg>
+				<div class="img">
+					<img alt="img" class="product__img"
+							 src="assets/img/popular-items/img_8.png">
+				</div>
+				<div class="product-card">
+					<h3 class="price">999 $</h3>
+					<svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
+							 width="24"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+								fill="#FFD640"/>
+					</svg>
+				</div>
+				<div class="description">
+					<h4 class="product__description">Commuter bargain bicycle. Commute
+						smarter with our bicycles on sale.
+						Affordable, eco-friendly, and perfect
+						for city living. Limited-time offer,
+						act fast!</h4>
+				</div>
+				<div class="product__details" style="display: none">
+					<div class="product__text">
+						<span class="product__text-title">Bicycle brand</span>
+						<span class="product__text-text">Leon</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Negotiable price</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Exchange available</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Location</span>
+						<span class="product__text-text">Kyiv city</span>
+					</div>
+				</div>
+			</div>
+			<div class="product"  appHoverDetail>
+				<svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
+						 width="72"
+						 xmlns="http://www.w3.org/2000/svg">
+					<path
+							d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+							fill="#00478F"/>
+					<text fill="white" font-family="Lato" font-size="16"
+								font-style="normal" font-weight="400"
+								letter-spacing="0.64px" line-height="normal" x="10" y="20">Used
+					</text>
+				</svg>
+				<div class="img">
+					<img alt="img" class="product__img"
+							 src="assets/img/popular-items/img_9.png">
+				</div>
+				<div class="product-card">
+					<h3 class="price">1 199 $</h3>
+					<svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
+							 width="24"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+								fill="#FFD640"/>
+					</svg>
+				</div>
+				<div class="description">
+					<h4 class="product__description">Mountain bicycle mega sale! Explore
+						off-road adventures with our
+						discounted
+						mountain bikes. Durable, reliable,
+						and perfect for all terrain.
+						26d</h4>
+				</div>
+				<div class="product__details" style="display: none">
+					<div class="product__text">
+						<span class="product__text-title">Bicycle brand</span>
+						<span class="product__text-text">Leon</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Negotiable price</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Exchange available</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Location</span>
+						<span class="product__text-text">Kyiv city</span>
+					</div>
+				</div>
+			</div>
+			<div class="product"  appHoverDetail>
+				<svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
+						 width="72"
+						 xmlns="http://www.w3.org/2000/svg">
+					<path
+							d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+							fill="#00478F"/>
+					<text fill="white" font-family="Lato" font-size="16"
+								font-style="normal" font-weight="400"
+								letter-spacing="0.64px" line-height="normal" x="10" y="20">Used
+					</text>
+				</svg>
+				<div class="img">
+					<img alt="img" class="product__img"
+							 src="assets/img/popular-items/img_10.png">
+				</div>
+				<div class="product-card">
+					<h3 class="price">1 020 $</h3>
+					<svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
+							 width="24"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+								fill="#FFD640"/>
+					</svg>
+				</div>
+				<div class="description">
+					<h4 class="product__description">City bicycle flash deal. Ride in
+						style through the city streets with
+						our
+						cruiser bikes, now at a special
+						price. Comfortable, trendy, and ready
+						for
+						urban exploration.
+						28d</h4>
+				</div>
+				<div class="product__details" style="display: none">
+					<div class="product__text">
+						<span class="product__text-title">Bicycle brand</span>
+						<span class="product__text-text">Leon</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Negotiable price</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Exchange available</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Location</span>
+						<span class="product__text-text">Kyiv city</span>
+					</div>
+				</div>
+			</div>
+			<div class="product"  appHoverDetail>
+				<svg class="product__ticket" fill="none" height="29" viewBox="0 0 72 29"
+						 width="72"
+						 xmlns="http://www.w3.org/2000/svg">
+					<path
+							d="M70.9068 0H1C0.447715 0 0 0.447716 0 1V28C0 28.5523 0.447715 29 1 29H57.8723C58.2561 29 58.606 28.7804 58.7729 28.4347L71.8074 1.43475C72.1279 0.77075 71.6441 0 70.9068 0Z"
+							fill="#00478F"/>
+					<text fill="white" font-family="Lato" font-size="16"
+								font-style="normal" font-weight="400"
+								letter-spacing="0.64px" line-height="normal" x="10" y="20">New
+					</text>
+				</svg>
+				<div class="img">
+					<img alt="img" class="product__img"
+							 src="assets/img/popular-items/img_11.png">
+				</div>
+				<div class="product-card">
+					<h3 class="price">900 $</h3>
+					<svg class="favorite__img" fill="none" height="24" viewBox="0 0 24 24"
+							 width="24"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M12.1 20.8C11.6 20.8 11 20.6 10.6 20.2C4.1 14.5 4 14.4 4 14.3L3.9 14.2C2.7 13 2 11.3 2 9.6V9.4C2.1 5.8 5 3 8.6 3C9.7 3 11.2 3.6 12.1 4.8C13 3.6 14.6 3 15.7 3C19.3 3 22.1 5.8 22.3 9.4V9.6C22.3 11.4 21.6 13 20.4 14.3L20.3 14.4C20.2 14.5 19.4 15.2 13.7 20.3C13.2 20.6 12.7 20.8 12.1 20.8ZM5.5 14C5.9 14.4 7.9 15.8 11.6 19C11.9 19.3 12.3 19.3 12.6 19C16.4 15.6 18.6 13.7 19.1 13.3L19.2 13.2C20.2 12.2 20.7 10.9 20.7 9.6V9.4C20.6 6.6 18.4 4.5 15.6 4.5C14.9 4.5 13.5 5 13 6.1C12.8 6.5 12.4 6.7 12 6.7C11.6 6.7 11.2 6.5 11 6.1C10.5 5.1 9.2 4.5 8.4 4.5C5.7 4.5 3.4 6.7 3.3 9.4V9.7C3.3 11 3.9 12.3 4.8 13.2L5.5 14Z"
+								fill="#FFD640"/>
+					</svg>
+				</div>
+				<div class="description">
+					<h4 class="product__description">Mountain bikes on sale! Elevate your
+						trail experience with our discounted
+						mountain bikes. Grab yours now for
+						rugged adventures at an unbeatable
+						price.
+						28d</h4>
+				</div>
+				<div class="product__details" style="display: none">
+					<div class="product__text">
+						<span class="product__text-title">Bicycle brand</span>
+						<span class="product__text-text">Leon</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Negotiable price</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Exchange available</span>
+						<span class="product__text-text">Yes</span>
+					</div>
+					<div class="product__text">
+						<span class="product__text-title">Location</span>
+						<span class="product__text-text">Kyiv city</span>
+					</div>
+				</div>
+			</div>
+		</div> -->
     <div class="btn">
-      <button class="btn-more btn--second" (click)="loadLatestItems()">Next page</button>
+      <button class="btn-more btn--second"
+              (click)="loadLatestItems()">Next page</button>
       <div class="pagination">
         <span class="pagination__text">Page</span>
-        <span class="pagination__number">{{ numberLastPage }}</span>
+        <span class="pagination__number">{{numberLastPage}}</span>
         <span>of</span>
-        <span class="pagination__quantity">{{ pageLastQuantity }}</span>
+        <span class="pagination__quantity">{{pageLastQuantity}}</span>
       </div>
     </div>
 
